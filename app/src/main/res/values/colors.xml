@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#33b5e6</color>
+    <color name="colorAccent">#B2504949</color>
+    <color name="colorNotifi">#00616e</color>
+    <color name="background_color">#fafafa</color>
+    <color name="border_color">#dbdbdb</color>
+    <color name="sign_up_button">#4285f4</color>
+</resources>

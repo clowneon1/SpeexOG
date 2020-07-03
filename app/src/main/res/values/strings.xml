@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SpeeX</string>
+    <string name="Verification_Mail">Email verification link is sent. Please verify your email and sign in to your account.</string>
+</resources>
