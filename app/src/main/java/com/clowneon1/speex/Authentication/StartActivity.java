@@ -6,22 +6,34 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.clowneon1.speex.Home.HomeActivity;
 import com.clowneon1.speex.R;
 
 public class StartActivity extends AppCompatActivity {
     private static int TIME_OUT = 1000;
-
+    private DataBaseRef dataBaseRef = new DataBaseRef();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(StartActivity.this,SignInActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        },TIME_OUT);
+        if(dataBaseRef.getCurrentUser() != null){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(StartActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },TIME_OUT);
+        }else{
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(StartActivity.this,SignInActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },TIME_OUT);
+        }
     }
 }

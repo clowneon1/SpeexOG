@@ -107,6 +107,7 @@ public class SignInActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
                 Toast.makeText(SignInActivity.this, "Invalid email address", Toast.LENGTH_SHORT).show();
                 sign_in.setEnabled(true);
             }
