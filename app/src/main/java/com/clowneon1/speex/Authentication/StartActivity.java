@@ -17,7 +17,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        if(dataBaseRef.getCurrentUser() != null){
+        if(dataBaseRef.getCurrentUser() != null && dataBaseRef.getCurrentUser().isEmailVerified()){
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

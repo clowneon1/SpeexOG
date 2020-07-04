@@ -12,9 +12,5 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-
-        <item android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_menu_logout"
-            android:title="@string/logout"/>
     </group>
 </menu>

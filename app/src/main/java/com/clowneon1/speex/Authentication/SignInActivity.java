@@ -88,20 +88,20 @@ public class SignInActivity extends AppCompatActivity {
         dataBaseRef.Auth.signInWithEmailAndPassword(txt_Email ,txt_Password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                        if(!dataBaseRef.getCurrentUser().isEmailVerified()) {
+                        if(dataBaseRef.getCurrentUser().isEmailVerified()) {
                             progressDialog.dismiss();
-                            resendVerificationMail();
+                            returnToMain();
                         }
                         else{
                             progressDialog.dismiss();
-                            returnToMain();
+                            resendVerificationMail();
                         }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 progressDialog.dismiss();
-                Toast.makeText(SignInActivity.this, "Invalid email address", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "Invalid email address or wrong password", Toast.LENGTH_SHORT).show();
                 sign_in.setEnabled(true);
             }
         });
@@ -123,7 +123,6 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
-                finish();;
             }
         });
         AlertDialog Alert = builder.create();
