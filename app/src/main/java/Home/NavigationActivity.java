@@ -1,13 +1,20 @@
 package Home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.clowneon1.speex.Authentication.DataBaseRef;
+import com.clowneon1.speex.Authentication.SignInActivity;
 import com.clowneon1.speex.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,9 +23,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import static com.clowneon1.speex.R.id.action_logout;
+import static com.clowneon1.speex.R.id.nav_logout;
+
 public class NavigationActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private MenuItem Logout_Item;
+    private DataBaseRef dataBaseRef = new DataBaseRef();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +59,28 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.action_logout:{
+                dataBaseRef.Auth.signOut();
+                Toast.makeText(this,"Signing out",Toast.LENGTH_SHORT);
+                Intent intent = new Intent(this, SignInActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
