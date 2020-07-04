@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.clowneon1.speex.Home.HomeActivity;
+import com.clowneon1.speex.UI.HomeActivity;
 import com.clowneon1.speex.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

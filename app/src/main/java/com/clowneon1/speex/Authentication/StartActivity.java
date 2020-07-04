@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.clowneon1.speex.Home.HomeActivity;
+import com.clowneon1.speex.UI.HomeActivity;
 import com.clowneon1.speex.R;
 
 public class StartActivity extends AppCompatActivity {

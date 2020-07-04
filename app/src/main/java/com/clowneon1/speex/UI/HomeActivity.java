@@ -1,4 +1,4 @@
-package com.clowneon1.speex.Home;
+package com.clowneon1.speex.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
