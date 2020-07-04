@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,18 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.clowneon1.speex.UI.HomeActivity;
 import com.clowneon1.speex.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
 
-import java.time.Instant;
-import java.util.HashMap;
+import Home.NavigationActivity;
 
 
 public class SignInActivity extends AppCompatActivity {
@@ -115,7 +108,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void returnToMain(){
-        Intent ToMain = new Intent(SignInActivity.this, HomeActivity.class);
+        Intent ToMain = new Intent(SignInActivity.this, NavigationActivity.class);
         ToMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(ToMain);
         finish();
