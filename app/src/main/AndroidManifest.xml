@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.clowneon1.speex" >
+    package="com.clowneon1.speex">
 
     <application
         android:allowBackup="true"
@@ -8,15 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="Home.NavigationActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Authentication.SignUpActivity" />
         <activity android:name=".Authentication.SignInActivity" />
-        <activity android:name=".Authentication.StartActivity" >
+        <activity android:name=".Authentication.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

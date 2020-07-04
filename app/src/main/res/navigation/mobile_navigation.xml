@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="Home.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_settings"
+        android:name="Home.ui.Settings.SettingFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/nav_account"
         android:name="Home.ui.account.AccountFragment"
-        android:label="fragment_account"
+        android:label="Speex"
         tools:layout="@layout/fragment_account" />
 </navigation>
