@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 
-import Home.NavigationActivity;
+import Home.MainActivity;
 
 
 public class SignInActivity extends AppCompatActivity {
@@ -108,7 +108,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void returnToMain(){
-        Intent ToMain = new Intent(SignInActivity.this, NavigationActivity.class);
+        Intent ToMain = new Intent(SignInActivity.this, MainActivity.class);
         ToMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(ToMain);
         finish();

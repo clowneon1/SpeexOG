@@ -8,7 +8,7 @@ import android.os.Handler;
 
 import com.clowneon1.speex.R;
 
-import Home.NavigationActivity;
+import Home.MainActivity;
 
 public class StartActivity extends AppCompatActivity {
     private static int TIME_OUT = 1000;
@@ -21,7 +21,7 @@ public class StartActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(StartActivity.this, NavigationActivity.class);
+                    Intent intent = new Intent(StartActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
