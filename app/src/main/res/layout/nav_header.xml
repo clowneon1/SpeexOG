@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@android:color/holo_blue_dark"
-    android:orientation="vertical">
+    android:background="@android:color/holo_blue_dark">
+
+    <ImageView
+        android:id="@+id/profile_thumb"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="65dp"
+        android:transformPivotX="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:id="@+id/nav_head_username"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HeaderView"
-        android:textSize="30dp" />
-</LinearLayout>
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="0dp"
+        android:fontFamily="sans-serif"
+        android:text="Example"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_thumb" />
+
+    <TextView
+        android:id="@+id/nav_header_email"
+        style="@style/Base.Widget.MaterialComponents.TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="sans-serif"
+        android:text="email@gmail.com"
+        android:textColor="#8FFFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_head_username" />
+</androidx.constraintlayout.widget.ConstraintLayout>

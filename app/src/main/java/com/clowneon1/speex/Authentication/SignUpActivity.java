@@ -62,11 +62,11 @@ public class SignUpActivity extends AppCompatActivity {
         New_Sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String USERNAME = Username.getText().toString();
-                final String EMAIL = Email.getText().toString();
-                final String PASSWORD = Password.getText().toString();
-                final String NAME = Name.getText().toString();
-                final String SURNAME = Surname.getText().toString();
+                final String USERNAME = Username.getText().toString().trim();
+                final String EMAIL = Email.getText().toString().trim();
+                final String PASSWORD = Password.getText().toString().trim();
+                final String NAME = Name.getText().toString().trim();
+                final String SURNAME = Surname.getText().toString().trim();
                 final String TEMPSTRING = USERNAME;
                 progressDialog = new ProgressDialog(SignUpActivity.this);
                 progressDialog.setTitle("Signing up");
@@ -80,6 +80,8 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 else if(TextUtils.isEmpty(EMAIL)){
                     Toast.makeText(SignUpActivity.this,"Email address cannot be empty",Toast.LENGTH_LONG).show();
+                }else if(USERNAME.contains(" ") || NAME.contains(" ") || SURNAME.contains(" ")){
+                    Toast.makeText(SignUpActivity.this,"Invalid Credentials",Toast.LENGTH_LONG).show();
                 }
                 else if(TextUtils.isEmpty(PASSWORD)){
                     Toast.makeText(SignUpActivity.this,"Password cannot be empty",Toast.LENGTH_LONG).show();
@@ -159,6 +161,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(SignUpActivity.this, "You cannot create Account with this email", Toast.LENGTH_SHORT).show();
+                        New_Sign_up.setEnabled(true);
                     }
                 });
             }
@@ -166,7 +169,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                     progressDialog.dismiss();
-                    Toast.makeText(SignUpActivity.this, "Invalid email address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Invalid email address or email already registered", Toast.LENGTH_SHORT).show();
                     New_Sign_up.setEnabled(true);
             }
         });

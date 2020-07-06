@@ -50,8 +50,9 @@ public class SignInActivity extends AppCompatActivity {
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignInActivity.this,SignUpActivity.class);
-                startActivity(intent);
+
+               /*Intent intent = new Intent(SignInActivity.this,SignUpActivity.class);
+                startActivity(intent);*/
             }
         });
         txt_click.setOnClickListener(new View.OnClickListener() {
@@ -64,8 +65,8 @@ public class SignInActivity extends AppCompatActivity {
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String EMAIL = email_sig_in.getText().toString();
-                String PASSWORD = password_sign_in.getText().toString();
+                String EMAIL = email_sig_in.getText().toString().trim();
+                String PASSWORD = password_sign_in.getText().toString().trim();
 
                 if(TextUtils.isEmpty(EMAIL)){
                     Toast.makeText(SignInActivity.this,"Email address cannot be empty",Toast.LENGTH_LONG).show();
@@ -94,6 +95,7 @@ public class SignInActivity extends AppCompatActivity {
                         }
                         else{
                             progressDialog.dismiss();
+                            sign_in.setEnabled(false);
                             resendVerificationMail();
                         }
             }

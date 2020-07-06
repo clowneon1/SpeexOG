@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.clowneon1.speex.R;
+import com.google.firebase.database.FirebaseDatabase;
 
 import Home.MainActivity;
 
-public class StartActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity{
+
     private static int TIME_OUT = 1000;
     private DataBaseRef dataBaseRef = new DataBaseRef();
     @Override
