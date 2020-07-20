@@ -6,25 +6,25 @@
     android:layout_height="200dp"
     android:background="@android:color/holo_blue_dark">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_thumb"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="65dp"
+        android:layout_marginVertical="60dp"
+        android:src="@drawable/user_acc_"
         android:transformPivotX="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nav_head_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="0dp"
+        android:layout_marginVertical="5dp"
         android:fontFamily="sans-serif"
         android:text="Example"
         android:textColor="#FFFFFF"

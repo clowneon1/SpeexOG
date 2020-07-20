@@ -11,6 +11,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.security.PublicKey;
 
@@ -23,6 +25,11 @@ public class DataBaseRef{
     private DatabaseReference UserDataRef = FirebaseDatabase.getInstance().getReference().child("User");
     private DatabaseReference UserInfo = FirebaseDatabase.getInstance().getReference().child("Users").child("Userinfo");
     private DatabaseReference UserList = FirebaseDatabase.getInstance().getReference().child("Users").child("Userlist");
+    private StorageReference UserReference = FirebaseStorage.getInstance().getReference().child("Users");
+
+    public StorageReference getUsersStorageRef() {
+        return UserReference;
+    }
 
     public DatabaseReference getUserDataRef(){
         UserDataRef.keepSynced(true);

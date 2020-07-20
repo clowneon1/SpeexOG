@@ -85,6 +85,8 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 else if(TextUtils.isEmpty(PASSWORD)){
                     Toast.makeText(SignUpActivity.this,"Password cannot be empty",Toast.LENGTH_LONG).show();
+                }else if(USERNAME.length() < 5){
+                    Toast.makeText(SignUpActivity.this,"Username length must be at least 5 letters",Toast.LENGTH_LONG).show();
                 }
                 else if(PASSWORD.length() < 6){
                     Toast.makeText(SignUpActivity.this,"Password must be at least 6 letters",Toast.LENGTH_LONG).show();
@@ -126,8 +128,10 @@ public class SignUpActivity extends AppCompatActivity {
                 UserInfo.put("Username",USER_USERNAME);
                 UserInfo.put("Email" ,USER_EMAIL);
                 UserInfo.put("Password",USER_PASSWORD);
+                UserInfo.put("Status","online");
                 UserInfo.put("ImageURL","default");
                 UserInfo.put("ImageThumbURL","default");
+                UserInfo.put("Bio" , "You can edit it.");
 
                 /*HashMap<String , String> UserList = new HashMap<>();
                 UserList.put(USER_USERNAME,dataBaseRef.getCurrentUser().getUid());*/
@@ -160,6 +164,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
                         Toast.makeText(SignUpActivity.this, "You cannot create Account with this email", Toast.LENGTH_SHORT).show();
                         New_Sign_up.setEnabled(true);
                     }

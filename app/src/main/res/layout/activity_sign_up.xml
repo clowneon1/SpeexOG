@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Authentication.SignInActivity">
@@ -50,8 +49,8 @@
         android:layout_marginStart="28dp"
         android:ems="10"
         android:hint="Username"
-        android:singleLine="true"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_name" />
 
@@ -73,8 +72,8 @@
         android:layout_height="50dp"
         android:ems="10"
         android:hint="Password"
-        android:singleLine="true"
         android:inputType="textPassword"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/sign_up_email"
         app:layout_constraintStart_toStartOf="@+id/sign_up_email"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_email" />
@@ -100,8 +99,8 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Name"
-        android:singleLine="true"
         android:inputType="textCapSentences"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/sign_up_surname"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/sign_up_username"
@@ -112,9 +111,9 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:singleLine="true"
         android:hint="Surname"
         android:inputType="textCapSentences"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/sign_up_username"
         app:layout_constraintTop_toTopOf="@+id/sign_up_name" />
 
@@ -125,7 +124,8 @@
         android:layout_marginBottom="48dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"

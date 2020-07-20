@@ -16,8 +16,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.clowneon1.speex.Authentication.DataBaseRef;
 import com.clowneon1.speex.R;
 import com.google.android.material.navigation.NavigationView;
@@ -27,6 +29,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 import Navigation.SettingsActivity;
 
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     PagerAdapter adapter;
     DataBaseRef databaseRef = new DataBaseRef();
     private String tempString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 View headerView = navigationView.getHeaderView(0);
                 TextView navUsername = (TextView) headerView.findViewById(R.id.nav_head_username);
                 navUsername.setText(tempString);
+                String ThumbImage = snapshot.child("ImageThumbURL").getValue().toString();
+
+                if(!ThumbImage.equals("default")){
+                    headerView = navigationView.getHeaderView(0);
+                    ImageView ThumbImg = (ImageView) headerView.findViewById(R.id.profile_thumb);
+                    Glide.with(MainActivity.this).load(ThumbImage).into(ThumbImg);
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -123,4 +135,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return false;
     }
+
 }

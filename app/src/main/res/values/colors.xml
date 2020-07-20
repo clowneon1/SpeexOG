@@ -9,4 +9,6 @@
     <color name="sign_up_button">#4285f4</color>
     <color name="nav_head">#142642</color>
     <color name="indicater">#001f38</color>
+    <color name="black">#000</color>
+    <color name="blue_dark">@android:color/holo_blue_dark</color>
 </resources>
