@@ -248,7 +248,6 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onReceive(final Context context, final Intent intent) {
 
-            //Log.v(LOG_TAG, "Receieved notification about network status");
             isNetworkAvailable(context);
 
         }
@@ -270,9 +269,6 @@ public class SettingsActivity extends AppCompatActivity {
                                 if (!isConnected) {
                                     display_status.setText("online");
                                     isConnected = true;
-                                    //do your processing here ---
-                                    //if you need to post any data to the server or get status
-                                    //update from the server
                                 }
                                 return true;
                             }

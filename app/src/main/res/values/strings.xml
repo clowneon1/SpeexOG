@@ -21,4 +21,5 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="sign_out">Sign out</string>
+    <string name="bio">Add some cool stuff about you here.</string>
 </resources>
